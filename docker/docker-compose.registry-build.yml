@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  allure:
+    image: ${DOCKER_REGISTRY:-asia.gcr.io}/${GCP_PROJECT:-projectname}/allure:${TAG:-latest}
+    build:
+      context: ../
+      dockerfile: ./allure.Dockerfile
+
+  allureui:
+    image: ${DOCKER_REGISTRY:-asia.gcr.io}/${GCP_PROJECT:-projectname}/allureui:${TAG:-latest}
+    build:
+      context: ../
+      dockerfile: ./allureui.Dockerfile
+   
